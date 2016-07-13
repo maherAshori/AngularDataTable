@@ -53,6 +53,10 @@ Bind Data in the table
   <li>data-page-size: 'int'</li>
   <li>data-return-action: 'function return tableService.getAction()'</li>
   <li>data-server-side-records: "int" > if this set, pagination numbers will change by server data records length, else pagination number eq array length</li>
+  <li>data-filter: 'bool'</li>
+  <li>data-filter-by: 'some name from your abject params, EX: name OR lastName OR Id' from {name: "x", lastName: "Y", Id: 2}</li>
+  <li>data-filter-advance: 'model'</li>
+  <li>data-lang: "en/fa"</li>
 </ul>
 
 
@@ -72,6 +76,7 @@ default sortBy and orderBy when table start:
   <li>data-header: 'header title for each col'</li>
   <li>data-binding: 'some name from your abject params, EX: name OR lastName OR Id' from {name: "x", lastName: "Y", Id: 2}</li>
   <li>data-sortable: 'bool'</li>
+  <li>data-header-source= 'string, what you bind in td for sorting'</li>
 </ul>
 
 # td binding
@@ -84,3 +89,4 @@ default sortBy and orderBy when table start:
   </td>
 ```
 
+# filter
