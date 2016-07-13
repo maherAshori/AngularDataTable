@@ -11,6 +11,7 @@ Bind Data in the table
                data-page-size="5"
                data-return-action="pageOnChange()"
                data-filter="true"
+               data-server-side-records="50"
                data-filter-by="name"
                data-filter-advance="filter"
                data-lang="fa">
