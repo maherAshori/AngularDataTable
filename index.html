@@ -96,6 +96,10 @@
   <li>data-page-size: 'int'</li>
   <li>data-return-action: 'function return tableService.getAction()'</li>
   <li>data-server-side-records: "int" &gt; if this set, pagination numbers will change by server data records length, else pagination number eq array length</li>
+  <li>data-filter: 'bool'</li>
+  <li>data-filter-by: 'some name from your abject params, EX: name OR lastName OR Id' from {name: "x", lastName: "Y", Id: 2}</li>
+  <li>data-filter-advance: 'model'</li>
+  <li>data-lang: "en/fa"</li>
 </ul>
 
 <h1>
@@ -117,6 +121,7 @@
   <li>data-header: 'header title for each col'</li>
   <li>data-binding: 'some name from your abject params, EX: name OR lastName OR Id' from {name: "x", lastName: "Y", Id: 2}</li>
   <li>data-sortable: 'bool'</li>
+  <li>data-header-source= 'string, what you bind in td for sorting'</li>
 </ul>
 
 <h1>
@@ -128,6 +133,9 @@
     {{item.email}}
     &lt;<span class="pl-ent">a</span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>{{item.id}}<span class="pl-pds">"</span></span>&gt;btn&lt;/<span class="pl-ent">a</span>&gt;
   &lt;/<span class="pl-ent">td</span>&gt;</pre></div>
+
+<h1>
+<a id="filter" class="anchor" href="#filter" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>filter</h1>
       </section>
       <footer>
         <p>Project maintained by <a href="https://github.com/maherAshori">maherAshori</a></p>
