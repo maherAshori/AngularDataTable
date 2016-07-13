@@ -48,21 +48,21 @@
 <a id="indexhtml" class="anchor" href="#indexhtml" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>index.html</h1>
 
 <div class="highlight highlight-text-html-basic"><pre>        &lt;<span class="pl-ent">table</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>table table-bordered<span class="pl-pds">"</span></span>
-        &lt;<span class="pl-e">table</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>table table-bordered<span class="pl-pds">"</span></span>
                <span class="pl-e">data-table</span>
                <span class="pl-e">data-list</span>=<span class="pl-s"><span class="pl-pds">"</span>list<span class="pl-pds">"</span></span>
                <span class="pl-e">data-current-page</span>=<span class="pl-s"><span class="pl-pds">"</span>0<span class="pl-pds">"</span></span>
                <span class="pl-e">data-page-size</span>=<span class="pl-s"><span class="pl-pds">"</span>5<span class="pl-pds">"</span></span>
                <span class="pl-e">data-return-action</span>=<span class="pl-s"><span class="pl-pds">"</span>pageOnChange()<span class="pl-pds">"</span></span>
                <span class="pl-e">data-filter</span>=<span class="pl-s"><span class="pl-pds">"</span>true<span class="pl-pds">"</span></span>
+               <span class="pl-e">data-server-side-records</span>=<span class="pl-s"><span class="pl-pds">"</span>50<span class="pl-pds">"</span></span>
                <span class="pl-e">data-filter-by</span>=<span class="pl-s"><span class="pl-pds">"</span>name<span class="pl-pds">"</span></span>
                <span class="pl-e">data-filter-advance</span>=<span class="pl-s"><span class="pl-pds">"</span>filter<span class="pl-pds">"</span></span>
                <span class="pl-e">data-lang</span>=<span class="pl-s"><span class="pl-pds">"</span>fa<span class="pl-pds">"</span></span>&gt;
             &lt;<span class="pl-ent">tbody</span>&gt;
                 &lt;<span class="pl-ent">tr</span> <span class="pl-e">data-orderby</span>=<span class="pl-s"><span class="pl-pds">"</span>name<span class="pl-pds">"</span></span> <span class="pl-e">data-asc</span>=<span class="pl-s"><span class="pl-pds">"</span>false<span class="pl-pds">"</span></span>&gt;
-                    &lt;<span class="pl-ent">td</span> <span class="pl-e">data-header</span>=<span class="pl-s"><span class="pl-pds">"</span>name<span class="pl-pds">"</span></span> <span class="pl-e">data-binding</span>=<span class="pl-s"><span class="pl-pds">"</span>name<span class="pl-pds">"</span></span> <span class="pl-e">data-sortable</span>=<span class="pl-s"><span class="pl-pds">"</span>true<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">td</span>&gt;
-                    &lt;<span class="pl-ent">td</span> <span class="pl-e">data-header</span>=<span class="pl-s"><span class="pl-pds">"</span>username<span class="pl-pds">"</span></span> <span class="pl-e">data-sortable</span>=<span class="pl-s"><span class="pl-pds">"</span>true<span class="pl-pds">"</span></span>&gt;{{item.username}}&lt;/<span class="pl-ent">td</span>&gt;
-                    &lt;<span class="pl-ent">td</span> <span class="pl-e">data-header</span>=<span class="pl-s"><span class="pl-pds">"</span>actions<span class="pl-pds">"</span></span>&gt;
+                    &lt;<span class="pl-ent">td</span> <span class="pl-e">data-header-source</span>=<span class="pl-s"><span class="pl-pds">"</span>Name<span class="pl-pds">"</span></span> <span class="pl-e">data-header</span>=<span class="pl-s"><span class="pl-pds">"</span>name<span class="pl-pds">"</span></span> <span class="pl-e">data-binding</span>=<span class="pl-s"><span class="pl-pds">"</span>name<span class="pl-pds">"</span></span> <span class="pl-e">data-sortable</span>=<span class="pl-s"><span class="pl-pds">"</span>true<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">td</span>&gt;
+                    &lt;<span class="pl-ent">td</span> <span class="pl-e">data-header-source</span>=<span class="pl-s"><span class="pl-pds">"</span>Username<span class="pl-pds">"</span></span> <span class="pl-e">data-header</span>=<span class="pl-s"><span class="pl-pds">"</span>username<span class="pl-pds">"</span></span> <span class="pl-e">data-sortable</span>=<span class="pl-s"><span class="pl-pds">"</span>true<span class="pl-pds">"</span></span>&gt;{{item.username}}&lt;/<span class="pl-ent">td</span>&gt;
+                    &lt;<span class="pl-ent">td</span> <span class="pl-e">data-header</span>=<span class="pl-s"><span class="pl-pds">"</span>action<span class="pl-pds">"</span></span>&gt;
                         {{item.email}}
                         &lt;<span class="pl-ent">a</span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>{{item.id}}<span class="pl-pds">"</span></span>&gt;btn&lt;/<span class="pl-ent">a</span>&gt;
                     &lt;/<span class="pl-ent">td</span>&gt;
@@ -137,12 +137,12 @@
 <h1>
 <a id="td-binding" class="anchor" href="#td-binding" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>td binding</h1>
 
-<div class="highlight highlight-text-html-basic"><pre> &lt;<span class="pl-ent">td</span> <span class="pl-e">data-header</span>=<span class="pl-s"><span class="pl-pds">"</span>name<span class="pl-pds">"</span></span> <span class="pl-e">data-binding</span>=<span class="pl-s"><span class="pl-pds">"</span>name<span class="pl-pds">"</span></span> <span class="pl-e">data-sortable</span>=<span class="pl-s"><span class="pl-pds">"</span>true<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">td</span>&gt;
- &lt;<span class="pl-ent">td</span> <span class="pl-e">data-header</span>=<span class="pl-s"><span class="pl-pds">"</span>username<span class="pl-pds">"</span></span> <span class="pl-e">data-sortable</span>=<span class="pl-s"><span class="pl-pds">"</span>true<span class="pl-pds">"</span></span>&gt;{{item.username}}&lt;/<span class="pl-ent">td</span>&gt;
- &lt;<span class="pl-ent">td</span> <span class="pl-e">data-header</span>=<span class="pl-s"><span class="pl-pds">"</span>actions<span class="pl-pds">"</span></span>&gt;
-    {{item.email}}
-    &lt;<span class="pl-ent">a</span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>{{item.id}}<span class="pl-pds">"</span></span>&gt;btn&lt;/<span class="pl-ent">a</span>&gt;
-  &lt;/<span class="pl-ent">td</span>&gt;</pre></div>
+<div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">td</span> <span class="pl-e">data-header-source</span>=<span class="pl-s"><span class="pl-pds">"</span>Name<span class="pl-pds">"</span></span> <span class="pl-e">data-header</span>=<span class="pl-s"><span class="pl-pds">"</span>name<span class="pl-pds">"</span></span> <span class="pl-e">data-binding</span>=<span class="pl-s"><span class="pl-pds">"</span>name<span class="pl-pds">"</span></span> <span class="pl-e">data-sortable</span>=<span class="pl-s"><span class="pl-pds">"</span>true<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">td</span>&gt;
+&lt;<span class="pl-ent">td</span> <span class="pl-e">data-header-source</span>=<span class="pl-s"><span class="pl-pds">"</span>Username<span class="pl-pds">"</span></span> <span class="pl-e">data-header</span>=<span class="pl-s"><span class="pl-pds">"</span>username<span class="pl-pds">"</span></span> <span class="pl-e">data-sortable</span>=<span class="pl-s"><span class="pl-pds">"</span>true<span class="pl-pds">"</span></span>&gt;{{item.username}}&lt;/<span class="pl-ent">td</span>&gt;
+&lt;<span class="pl-ent">td</span> <span class="pl-e">data-header</span>=<span class="pl-s"><span class="pl-pds">"</span>action<span class="pl-pds">"</span></span>&gt;
+        {{item.email}}
+        &lt;<span class="pl-ent">a</span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>{{item.id}}<span class="pl-pds">"</span></span>&gt;btn&lt;/<span class="pl-ent">a</span>&gt;
+&lt;/<span class="pl-ent">td</span>&gt;</pre></div>
 
 <h1>
 <a id="filter-model" class="anchor" href="#filter-model" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>filter model</h1>
