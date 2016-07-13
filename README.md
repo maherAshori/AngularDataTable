@@ -5,7 +5,6 @@ Bind Data in the table
 
 ```html
         <table class="table table-bordered"
-        <table class="table table-bordered"
                data-table
                data-list="list"
                data-current-page="0"
@@ -17,9 +16,9 @@ Bind Data in the table
                data-lang="fa">
             <tbody>
                 <tr data-orderby="name" data-asc="false">
-                    <td data-header="name" data-binding="name" data-sortable="true"></td>
-                    <td data-header="username" data-sortable="true">{{item.username}}</td>
-                    <td data-header="actions">
+                    <td data-header-source="Name" data-header="name" data-binding="name" data-sortable="true"></td>
+                    <td data-header-source="Username" data-header="username" data-sortable="true">{{item.username}}</td>
+                    <td data-header="action">
                         {{item.email}}
                         <a href="{{item.id}}">btn</a>
                     </td>
@@ -91,12 +90,12 @@ default sortBy and orderBy when table start:
 
 # td binding
 ```html
- <td data-header="name" data-binding="name" data-sortable="true"></td>
- <td data-header="username" data-sortable="true">{{item.username}}</td>
- <td data-header="actions">
-    {{item.email}}
-    <a href="{{item.id}}">btn</a>
-  </td>
+<td data-header-source="Name" data-header="name" data-binding="name" data-sortable="true"></td>
+<td data-header-source="Username" data-header="username" data-sortable="true">{{item.username}}</td>
+<td data-header="action">
+        {{item.email}}
+        <a href="{{item.id}}">btn</a>
+</td>
 ```
 
 # filter model
