@@ -102,10 +102,15 @@ default sortBy and orderBy when table start:
 # filter model
 
 ```javascript
+  var options = [
+        { name: "manager", value: 0 },
+        { name: "user", value: 1 }
+  ];
+
    $scope.filter = {
         fields: [
                 { name: "name", filter: true, setup: { title: "name", type: "text" } },
-                     { name: "role", filter: true, setup: { title: "role", type: "select", options: options } }
+                { name: "role", filter: true, setup: { title: "role", type: "select", options: options } }
                 ]
    }
 ```
