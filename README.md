@@ -11,7 +11,10 @@ Bind Data in the table
                data-current-page="0"
                data-page-size="5"
                data-return-action="pageOnChange()"
-               data-server-side-records="100">
+               data-filter="true"
+               data-filter-by="name"
+               data-filter-advance="filter"
+               data-lang="fa">
             <tbody>
                 <tr data-orderby="name" data-asc="false">
                     <td data-header="name" data-binding="name" data-sortable="true"></td>
@@ -40,6 +43,13 @@ Bind Data in the table
 
             $scope.pageOnChange = function () {
                 console.log(tableService.getAction());
+            }
+            
+            $scope.filter = {
+                fields: [
+                     { name: "name", filter: true, setup: { title: "name", type: "text" } },
+                     { name: "username", filter: false, setup: { title: "username", type: "text" } }
+                ]
             }
         });
 ```
