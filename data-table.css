@@ -1,0 +1,12 @@
+﻿.show-hide {
+    margin: 10px 0;
+}
+
+.angular-data-table-filter {
+    width: 100%;
+    background: #eee;
+    border: solid 1px #ccc;
+    padding: 15px;
+    position: absolute;
+    margin-top: 0;
+}
