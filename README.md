@@ -4,54 +4,71 @@ Bind Data in the table
 # index.html
 
 ```html
-        <table class="table table-bordered"
-               data-table
-               data-list="list"
-               data-current-page="0"
-               data-page-size="5"
-               data-return-action="pageOnChange()"
-               data-filter="true"
-               data-server-side-records="50"
-               data-filter-by="name"
-               data-filter-advance="filter"
-               data-lang="fa">
-            <tbody>
-                <tr data-orderby="name" data-asc="false">
-                    <td data-header-source="Name" data-header="name" data-binding="name" data-sortable="true"></td>
-                    <td data-header-source="Username" data-header="username" data-sortable="true">{{item.username}}</td>
-                    <td data-header="action">
-                        {{item.email}}
-                        <a href="{{item.id}}">btn</a>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+<!DOCTYPE html>
+<html ng-app="app" ng-controller="ctrl as self">
+<head>
+    <title></title>
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <link href="Content/font-awesome.css" rel="stylesheet" />
+    <link href="Content/data-table.css" rel="stylesheet" />
+    <link href="Content/style.css" rel="stylesheet" />
+</head>
+<body>
+<div class="container">
+    <table class="table table-bordered"
+           data-table
+           data-list="self.array"
+           data-filter="true"
+           data-lang="fa">
+        <tbody>
+            <tr data-orderby="name" data-asc="false">
+                <td data-header-source="name" data-header="name" data-binding="name" data-sortable="true"></td>
+                <td data-header="action">
+                    <a click="add" click-params="[item]">add</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+    <script src="Scripts/jquery-2.2.4.js"></script>
+    <script src="Scripts/angular.js"></script>
+    <script src="Scripts/data-table.js"></script>
+</body>
+</html>
+
 ```
 
 # controller.js
 ```javascript
         var app = angular.module("app", ["dataTable"]);
 
-        app.controller("ctrl", function ($scope, tableService, $http) {
-            var root = "http://jsonplaceholder.typicode.com";
+        app.controller("ctrl", ["$scope", "$http", "tableFactory", "tableService", function ($scope, $http, tableFactory, tableService) {
+            var self = this;
+            tableFactory.set(self);
 
-            $scope.list = [];
+            self.array = [
+                { name: "A" },
+                { name: "A2" },
+                { name: "A3" },
+                { name: "A4" }
+            ];
 
-            $http.get(root + "/users").success(function (data) {
-                $scope.list = data;
-            });
-
-            $scope.pageOnChange = function () {
-                console.log(tableService.getAction());
-            }
-            
             $scope.filter = {
                 fields: [
                      { name: "name", filter: true, setup: { title: "name", type: "text" } },
                      { name: "username", filter: false, setup: { title: "username", type: "text" } }
                 ]
             }
-        });
+            
+            $scope.pageOnChange = function () {
+                console.log(tableService.getAction());
+            }
+
+            self.add = function (item) {
+                console.log(item);
+            }
+        }]);
 ```
 
 # tableParams
@@ -96,6 +113,7 @@ default sortBy and orderBy when table start:
 <td data-header="action">
         {{item.email}}
         <a href="{{item.id}}">btn</a>
+        <a click="add" click-params="[item]">action</a>
 </td>
 ```
 
