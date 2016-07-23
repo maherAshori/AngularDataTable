@@ -151,7 +151,7 @@ dataTable.directive("table", ["$compile", "$filter", "tableService", function ($
                             scope.paging.push({ row: i + 1 });
                         }
                         //set at first
-                        scope.items = filters(watchNewList, pageSize, currentPage, orderBy, sortBy);
+                        scope.items = filters(watchNewList, pageSize, pageIndex, orderBy, sortBy);
                     }
                 }, true);
                 //#endregion
